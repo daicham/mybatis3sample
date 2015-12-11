@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.daicham.mybatis3sample.Main'
+
+ext {
+    javaVersion = 1.8
+    defaultEncoding = 'UTF-8'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'org.mybatis:mybatis:3.3.0'
+    compile 'org.apache.derby:derby:10.12.1.1'
+
+    testCompile 'junit:junit:4.12'
+}
+
+// Compile Settings
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
